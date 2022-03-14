@@ -30,7 +30,7 @@ import org.apache.linkis.manager.common.entity.enumeration.NodeStatus
 import org.apache.linkis.manager.common.protocol.engine.EngineConnStatusCallback
 import org.apache.linkis.rpc.Sender
 import org.apache.linkis.server.conf.ServerConfiguration
-import org.apache.commons.lang.StringUtils
+import org.apache.commons.lang3.StringUtils
 import org.apache.commons.lang.exception.ExceptionUtils
 
 import scala.collection.mutable

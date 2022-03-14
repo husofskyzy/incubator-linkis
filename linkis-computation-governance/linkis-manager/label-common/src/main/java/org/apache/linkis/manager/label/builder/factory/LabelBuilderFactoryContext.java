@@ -21,7 +21,7 @@ import org.apache.linkis.manager.label.builder.LabelBuilder;
 import org.apache.linkis.manager.label.conf.LabelCommonConfig;
 
 import org.apache.commons.lang.ClassUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import org.reflections.Reflections;
 import org.slf4j.Logger;

@@ -24,7 +24,7 @@ import org.apache.linkis.common.io.{FsPath, MetaData, Record}
 import org.apache.linkis.common.utils.Utils
 import org.apache.linkis.governance.common.conf.GovernanceCommonConf
 import org.apache.linkis.manager.label.entity.Label
-import org.apache.commons.lang.StringUtils
+import org.apache.commons.lang3.StringUtils
 import org.apache.commons.lang.time.DateFormatUtils
 
 import scala.collection.mutable.ArrayBuffer

@@ -27,7 +27,7 @@ import org.apache.linkis.server.Message
 import org.apache.linkis.server.conf.ServerConfiguration._
 import org.apache.linkis.server.exception.BDPServerErrorException
 import org.apache.linkis.server.socket.controller.{ServerListenerEventBus, SocketServerEvent}
-import org.apache.commons.lang.StringUtils
+import org.apache.commons.lang3.StringUtils
 import org.apache.commons.lang.exception.ExceptionUtils
 import org.apache.commons.lang.time.DateFormatUtils
 import org.eclipse.jetty.websocket.servlet._

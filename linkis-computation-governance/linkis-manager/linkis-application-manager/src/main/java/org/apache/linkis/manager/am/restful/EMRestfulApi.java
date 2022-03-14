@@ -47,7 +47,7 @@ import org.apache.linkis.server.security.SecurityFilter;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang.exception.ExceptionUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
