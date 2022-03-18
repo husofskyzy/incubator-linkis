@@ -58,7 +58,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-import static org.apache.commons.lang.math.NumberUtils.isNumber;
+import static org.apache.commons.lang3.math.NumberUtils.isNumber;
 
 @AdapterMode
 @EnableAspectJAutoProxy(proxyTargetClass = true, exposeProxy = true)

@@ -20,7 +20,7 @@ package org.apache.linkis.governance.common.paser
 import org.apache.linkis.common.utils.Logging
 import org.apache.linkis.governance.common.conf.GovernanceCommonConf
 import org.apache.linkis.governance.common.paser.CodeType.CodeType
-import org.apache.commons.lang3.StringUtils
+import org.apache.commons.lang.StringUtils
 import org.slf4j.{Logger, LoggerFactory}
 
 import scala.collection.mutable

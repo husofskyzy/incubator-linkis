@@ -33,7 +33,7 @@ import org.apache.linkis.scheduler.executer.{ErrorExecuteResponse, ExecuteRespon
 import org.apache.linkis.storage.resultset.ResultSetWriter
 import org.apache.commons.io.IOUtils
 import org.apache.commons.lang3.StringUtils
-import org.apache.commons.lang.exception.ExceptionUtils
+import org.apache.commons.lang3.exception.ExceptionUtils
 import org.apache.spark.repl.SparkILoop
 import org.apache.spark.sql.{SQLContext, SparkSession}
 import org.apache.spark.util.SparkUtils

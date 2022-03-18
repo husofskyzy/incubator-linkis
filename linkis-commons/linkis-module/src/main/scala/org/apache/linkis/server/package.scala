@@ -25,7 +25,7 @@ import org.apache.linkis.server.exception.{BDPServerErrorException, NonLoginExce
 import org.apache.linkis.server.security.SecurityFilter
 import javax.servlet.http.HttpServletRequest
 import org.apache.commons.lang3.StringUtils
-import org.apache.commons.lang.exception.ExceptionUtils
+import org.apache.commons.lang3.exception.ExceptionUtils
 import org.slf4j.Logger
 
 import scala.collection.{JavaConversions, mutable}

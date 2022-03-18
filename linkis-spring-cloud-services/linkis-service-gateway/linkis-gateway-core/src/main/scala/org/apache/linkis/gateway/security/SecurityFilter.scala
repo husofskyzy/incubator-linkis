@@ -35,7 +35,7 @@ import org.apache.linkis.server.conf.ServerConfiguration
 import org.apache.linkis.server.exception.{LoginExpireException, NonLoginException}
 import org.apache.linkis.server.{Message, validateFailed}
 import org.apache.commons.lang3.StringUtils
-import org.apache.commons.lang.exception.ExceptionUtils
+import org.apache.commons.lang3.exception.ExceptionUtils
 import java.util.regex.Pattern
 
 object SecurityFilter extends Logging {
