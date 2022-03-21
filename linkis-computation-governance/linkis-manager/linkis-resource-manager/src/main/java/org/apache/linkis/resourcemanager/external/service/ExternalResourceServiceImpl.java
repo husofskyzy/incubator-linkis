@@ -58,8 +58,7 @@ public class ExternalResourceServiceImpl implements ExternalResourceService, Ini
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
-    ExternalResourceProviderDao providerDao;
+    @Autowired ExternalResourceProviderDao providerDao;
 
     ExternalResourceIdentifierParser[] identifierParsers;
 
@@ -83,10 +82,10 @@ public class ExternalResourceServiceImpl implements ExternalResourceService, Ini
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        resourceRequesters = new ExternalResourceRequester[]{new YarnResourceRequester()};
+        resourceRequesters = new ExternalResourceRequester[] {new YarnResourceRequester()};
 
         identifierParsers =
-                new ExternalResourceIdentifierParser[]{new YarnResourceIdentifierParser()};
+                new ExternalResourceIdentifierParser[] {new YarnResourceIdentifierParser()};
     }
 
     @Override
