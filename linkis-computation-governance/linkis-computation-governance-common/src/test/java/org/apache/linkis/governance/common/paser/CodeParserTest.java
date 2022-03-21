@@ -21,17 +21,15 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import scala.collection.mutable.Stack;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import scala.collection.mutable.Stack;
 
 public class CodeParserTest {
     PythonCodeParser pythonCodeParser = new PythonCodeParser();
 
     @BeforeAll
     @DisplayName("Each unit test method is executed once before execution")
-    protected static void beforeAll() throws Exception {
-    }
+    protected static void beforeAll() throws Exception {}
 
     @AfterAll
     @DisplayName("Each unit test method is executed once after execution")
@@ -42,6 +40,6 @@ public class CodeParserTest {
     public void testRecordBrackets() throws Exception {
         Stack<String> str = new Stack<>();
         String l = "{([])}";
-        pythonCodeParser.recordBrackets(str,l);
+        pythonCodeParser.recordBrackets(str, l);
     }
 }

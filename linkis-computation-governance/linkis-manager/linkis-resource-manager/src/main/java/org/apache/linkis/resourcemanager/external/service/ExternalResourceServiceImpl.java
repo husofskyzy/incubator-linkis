@@ -31,7 +31,6 @@ import org.apache.linkis.resourcemanager.external.domain.ExternalResourceProvide
 import org.apache.linkis.resourcemanager.external.parser.ExternalResourceIdentifierParser;
 import org.apache.linkis.resourcemanager.external.parser.YarnResourceIdentifierParser;
 import org.apache.linkis.resourcemanager.external.request.ExternalResourceRequester;
-import org.apache.linkis.resourcemanager.external.service.ExternalResourceService;
 import org.apache.linkis.resourcemanager.external.yarn.YarnResourceRequester;
 import org.apache.linkis.resourcemanager.utils.RMConfiguration;
 import org.apache.linkis.resourcemanager.utils.RMUtils;
