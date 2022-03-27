@@ -17,6 +17,7 @@
 
 package org.apache.linkis.cs.common.serialize.impl.history.metadata;
 
+import org.apache.linkis.common.utils.JacksonUtils;
 import org.apache.linkis.cs.common.entity.history.metadata.CSTableMetadataContextHistory;
 import org.apache.linkis.cs.common.entity.history.metadata.TableOperationType;
 import org.apache.linkis.cs.common.entity.metadata.CSTable;
@@ -36,7 +37,7 @@ public class CSTableMetadataHistorySerializer
     public CSTableMetadataContextHistory fromJson(String json) throws CSErrorException {
         Map<String, String> map = getMapValue(json);
         CSTableMetadataContextHistory history = get(map, new CSTableMetadataContextHistory());
-        history.setTable(CSCommonUtils.gson.fromJson(map.get("table"), CSTable.class));
+        history.setTable(JacksonUtils.JsonToObject(map.get("table"), CSTable.class));
         history.setOperationType(TableOperationType.valueOf(map.get("operationType")));
         return history;
     }
@@ -44,11 +45,11 @@ public class CSTableMetadataHistorySerializer
     @Override
     public String getJsonValue(CSTableMetadataContextHistory tableHistory) throws CSErrorException {
         Table table = tableHistory.getTable();
-        String tableStr = CSCommonUtils.gson.toJson(table);
+        String tableStr = JacksonUtils.toJson(table);
         Map<String, String> mapValue = getMapValue(tableHistory);
         mapValue.put("table", tableStr);
         mapValue.put("operationType", tableHistory.getOperationType().name());
-        return CSCommonUtils.gson.toJson(mapValue);
+        return JacksonUtils.toJson(mapValue);
     }
 
     @Override

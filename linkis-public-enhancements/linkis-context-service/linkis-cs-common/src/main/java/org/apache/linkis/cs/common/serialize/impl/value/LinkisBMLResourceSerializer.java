@@ -17,6 +17,7 @@
 
 package org.apache.linkis.cs.common.serialize.impl.value;
 
+import org.apache.linkis.common.utils.JacksonUtils;
 import org.apache.linkis.cs.common.entity.resource.LinkisBMLResource;
 import org.apache.linkis.cs.common.exception.CSErrorException;
 import org.apache.linkis.cs.common.serialize.AbstractSerializer;
@@ -30,7 +31,7 @@ public class LinkisBMLResourceSerializer extends AbstractSerializer<LinkisBMLRes
 
     @Override
     public LinkisBMLResource fromJson(String json) throws CSErrorException {
-        return CSCommonUtils.gson.fromJson(json, LinkisBMLResource.class);
+        return JacksonUtils.JsonToObject(json, LinkisBMLResource.class);
     }
 
     @Override

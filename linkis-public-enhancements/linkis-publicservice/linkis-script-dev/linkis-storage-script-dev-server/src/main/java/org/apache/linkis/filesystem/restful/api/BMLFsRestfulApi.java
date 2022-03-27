@@ -18,6 +18,7 @@
 package org.apache.linkis.filesystem.restful.api;
 
 import org.apache.linkis.common.io.FsPath;
+import org.apache.linkis.common.utils.JacksonUtils;
 import org.apache.linkis.filesystem.bml.BMLHelper;
 import org.apache.linkis.filesystem.exception.WorkSpaceException;
 import org.apache.linkis.filesystem.exception.WorkspaceExceptionManager;
@@ -36,8 +37,6 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-
-import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -67,7 +66,7 @@ public class BMLFsRestfulApi {
             Pair<Object, ArrayList<String[]>> collect = fileSource.collect()[0];
             Message message;
             try {
-                message = new Gson().fromJson(collect.getSecond().get(0)[0], Message.class);
+                message = JacksonUtils.JsonToObject(collect.getSecond().get(0)[0], Message.class);
                 if (message == null) throw WorkspaceExceptionManager.createException(80019);
             } catch (Exception e) {
                 return Message.ok()
@@ -102,7 +101,7 @@ public class BMLFsRestfulApi {
             Pair<Object, ArrayList<String[]>> collect = fileSource.collect()[0];
             Message message;
             try {
-                message = new Gson().fromJson(collect.getSecond().get(0)[0], Message.class);
+                message = JacksonUtils.JsonToObject(collect.getSecond().get(0)[0], Message.class);
                 if (message == null) {
                     throw WorkspaceExceptionManager.createException(80019);
                 }

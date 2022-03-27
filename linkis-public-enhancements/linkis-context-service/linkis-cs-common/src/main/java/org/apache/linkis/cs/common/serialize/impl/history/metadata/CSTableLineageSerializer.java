@@ -17,6 +17,7 @@
 
 package org.apache.linkis.cs.common.serialize.impl.history.metadata;
 
+import org.apache.linkis.common.utils.JacksonUtils;
 import org.apache.linkis.cs.common.entity.history.metadata.CSTableLineageHistory;
 import org.apache.linkis.cs.common.entity.metadata.CSTable;
 import org.apache.linkis.cs.common.entity.metadata.Table;
@@ -38,9 +39,8 @@ public class CSTableLineageSerializer extends AbstractSerializer<CSTableLineageH
         Map<String, String> map = getMapValue(json);
         CSTableLineageHistory history = get(map, new CSTableLineageHistory());
         history.setSourceTables(
-                CSCommonUtils.gson.fromJson(
-                        map.get("sourceTables"), new TypeToken<List<CSTable>>() {}.getType()));
-        history.setTable(CSCommonUtils.gson.fromJson(map.get("targetTable"), CSTable.class));
+                JacksonUtils.JsonToObject(map.get("sourceTables"), List.class));
+        history.setTable(JacksonUtils.JsonToObject(map.get("targetTable"), CSTable.class));
         return history;
     }
 
@@ -49,12 +49,12 @@ public class CSTableLineageSerializer extends AbstractSerializer<CSTableLineageH
             throws CSErrorException {
         Table targetTable = tableLineageMetadataContextHistory.getTable();
         List<Table> sourceTables = tableLineageMetadataContextHistory.getSourceTables();
-        String targetTableStr = CSCommonUtils.gson.toJson(targetTable);
-        String sourceTablesStr = CSCommonUtils.gson.toJson(sourceTables);
+        String targetTableStr = JacksonUtils.toJson(targetTable);
+        String sourceTablesStr = JacksonUtils.toJson(sourceTables);
         Map<String, String> mapValue = getMapValue(tableLineageMetadataContextHistory);
         mapValue.put("targetTable", targetTableStr);
         mapValue.put("sourceTables", sourceTablesStr);
-        return CSCommonUtils.gson.toJson(mapValue);
+        return JacksonUtils.toJson(mapValue);
     }
 
     @Override

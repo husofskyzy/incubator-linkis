@@ -17,6 +17,7 @@
 
 package org.apache.linkis.cs.common.serialize.impl.context;
 
+import org.apache.linkis.common.utils.JacksonUtils;
 import org.apache.linkis.cs.common.entity.source.LinkisHAWorkFlowContextID;
 import org.apache.linkis.cs.common.exception.CSErrorException;
 import org.apache.linkis.cs.common.serialize.AbstractSerializer;
@@ -32,7 +33,7 @@ public class LinkisHAWorkFlowContextIDSerializer
 
     @Override
     public LinkisHAWorkFlowContextID fromJson(String json) throws CSErrorException {
-        return CSCommonUtils.gson.fromJson(json, LinkisHAWorkFlowContextID.class);
+        return JacksonUtils.JsonToObject(json, LinkisHAWorkFlowContextID.class);
     }
 
     @Override

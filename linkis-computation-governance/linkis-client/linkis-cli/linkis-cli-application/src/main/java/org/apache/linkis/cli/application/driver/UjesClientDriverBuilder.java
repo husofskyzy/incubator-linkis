@@ -101,7 +101,7 @@ public class UjesClientDriverBuilder extends BuildableByVarAccess<UjesClientDriv
         Validator ctxValidator = new UjesContextValidator();
         ctxValidator.doValidation(context);
 
-        logger.info("==========ujes_Ctx============\n" + Utils.GSON.toJson(context));
+        logger.info("==========ujes_Ctx============\n" + Utils.toJson(context));
 
         targetObj.initDriver(context);
 

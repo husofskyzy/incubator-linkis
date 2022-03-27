@@ -117,7 +117,7 @@ public class LinkisJobResultPresenter extends QueryBasedPresenter {
                     } catch (Exception e) {
                         logger.warn(
                                 "Cannot convert ResultSet-Meta-Data. ResultSet-Meta-Data:"
-                                        + Utils.GSON.toJson(resultModel.getResultMetaData()),
+                                        + Utils.toJson(resultModel.getResultMetaData()),
                                 e);
                         continue;
                     }
@@ -128,7 +128,7 @@ public class LinkisJobResultPresenter extends QueryBasedPresenter {
                 } catch (Exception e) {
                     logger.warn(
                             "Cannot convert ResultSet-Content. ResultSet-Content:"
-                                    + Utils.GSON.toJson(resultModel.getResultContent()),
+                                    + Utils.toJson(resultModel.getResultContent()),
                             e);
                     continue;
                 }

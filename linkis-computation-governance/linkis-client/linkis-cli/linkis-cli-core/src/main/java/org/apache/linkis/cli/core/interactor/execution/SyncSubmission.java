@@ -206,7 +206,7 @@ public class SyncSubmission implements Execution {
                     "EXE0006",
                     ErrorLevel.ERROR,
                     CommonErrMsg.ExecutionErr,
-                    "Job is in abnormal status: " + CommonUtils.GSON.toJson(execData));
+                    "Job is in abnormal status: " + CommonUtils.toJson(execData));
         }
     }
 

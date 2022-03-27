@@ -70,7 +70,7 @@ public class ProcessInputUtil {
         parsedTplValidator.doValidation(result.getParsedTemplateCopy());
 
         Params params = result.getParams();
-        logger.debug("==========params============\n" + Utils.GSON.toJson(params));
+        logger.debug("==========params============\n" + Utils.toJson(params));
 
         Map<String, ClientProperties> propertiesMap = new HashMap<>();
         /*

@@ -17,6 +17,7 @@
 
 package org.apache.linkis.cs.common.serialize.impl.value.data;
 
+import org.apache.linkis.common.utils.JacksonUtils;
 import org.apache.linkis.cs.common.entity.data.LinkisJobData;
 import org.apache.linkis.cs.common.exception.CSErrorException;
 import org.apache.linkis.cs.common.serialize.AbstractSerializer;
@@ -26,7 +27,7 @@ public class LinkisJobDataSerializer extends AbstractSerializer<LinkisJobData> {
 
     @Override
     public LinkisJobData fromJson(String json) throws CSErrorException {
-        return CSCommonUtils.gson.fromJson(json, LinkisJobData.class);
+        return JacksonUtils.JsonToObject(json, LinkisJobData.class);
     }
 
     @Override

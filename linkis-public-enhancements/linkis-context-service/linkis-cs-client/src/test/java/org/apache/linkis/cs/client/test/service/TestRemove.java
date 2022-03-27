@@ -18,6 +18,7 @@
 package org.apache.linkis.cs.client.test.service;
 
 import org.apache.linkis.common.exception.ErrorException;
+import org.apache.linkis.common.utils.JacksonUtils;
 import org.apache.linkis.cs.client.Context;
 import org.apache.linkis.cs.client.ContextClient;
 import org.apache.linkis.cs.client.builder.ContextClientFactory;
@@ -30,8 +31,6 @@ import org.apache.linkis.cs.common.entity.enumeration.WorkType;
 import org.apache.linkis.cs.common.entity.resource.LinkisBMLResource;
 import org.apache.linkis.cs.common.entity.source.*;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -42,7 +41,6 @@ public class TestRemove {
     private ContextKey contextKey;
     private ContextValue contextValue;
     private CSWorkService csWorkService;
-    private Gson gson;
 
     public static void main(String[] args) throws Exception {
         TestRemove test = new TestRemove();
@@ -56,7 +54,6 @@ public class TestRemove {
     public void init() throws Exception {
         contextClient = ContextClientFactory.getOrCreateContextClient();
         csWorkService = CSWorkServiceImpl.getInstance();
-        gson = new GsonBuilder().setPrettyPrinting().create();
         LinkisHAWorkFlowContextID haContextID = new LinkisHAWorkFlowContextID();
         haContextID.setWorkSpace("wp1");
         haContextID.setProject("p1");
@@ -91,8 +88,8 @@ public class TestRemove {
         LinkisBMLResource resourceRs = (LinkisBMLResource) value.getValue();
         assertEquals(resourceOri.getResourceId(), resourceRs.getResourceId());
         assertEquals(resourceOri.getVersion(), resourceRs.getVersion());
-        System.out.println(gson.toJson(resourceOri));
-        System.out.println(gson.toJson(resourceRs));
+        System.out.println(JacksonUtils.objectToJsonFormat(resourceOri));
+        System.out.println(JacksonUtils.objectToJsonFormat(resourceRs));
     }
 
     public void testReset() throws ErrorException {
@@ -103,8 +100,8 @@ public class TestRemove {
     public void testGetAfterSet() throws ErrorException {
         ContextValue value = contextClient.getContextValue(contextId, contextKey);
         assertEquals(null, value);
-        System.out.println(gson.toJson(contextValue));
-        System.out.println(gson.toJson(value));
+        System.out.println(JacksonUtils.objectToJsonFormat(contextValue));
+        System.out.println(JacksonUtils.objectToJsonFormat(value));
     }
 
     public void testClose() throws Exception {

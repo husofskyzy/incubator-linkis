@@ -17,6 +17,7 @@
 
 package org.apache.linkis.cs.common.serialize.impl.context;
 
+import org.apache.linkis.common.utils.JacksonUtils;
 import org.apache.linkis.cs.common.entity.source.CommonContextValue;
 import org.apache.linkis.cs.common.exception.CSErrorException;
 import org.apache.linkis.cs.common.serialize.AbstractSerializer;
@@ -47,7 +48,7 @@ public class ContextValueSerializer extends AbstractSerializer<CommonContextValu
             String json = ContextSerializationHelper.getInstance().serialize(value);
             map.put("keywords", keywords);
             map.put("value", json);
-            return CSCommonUtils.gson.toJson(map);
+            return JacksonUtils.toJson(map);
         } catch (Exception e) {
             logger.error("Failed to serialize contextValue: ", e);
             throw new CSErrorException(97000, "Failed to serialize contextValue");
@@ -58,7 +59,7 @@ public class ContextValueSerializer extends AbstractSerializer<CommonContextValu
     public CommonContextValue fromJson(String json) throws CSErrorException {
         try {
             Map<String, String> jsonObj =
-                    CSCommonUtils.gson.fromJson(json, new HashMap<String, String>().getClass());
+                    JacksonUtils.JsonToObject(json, new HashMap<String, String>().getClass());
             String value = jsonObj.get("value");
             String keywords = jsonObj.get("keywords");
             Object valueObj = ContextSerializationHelper.getInstance().deserialize(value);

@@ -136,7 +136,7 @@ public class LinkisSubmitExecutor implements AsyncBackendExecutor, LogRetrievabl
             try {
                 DWSResult jobInfoResult =
                         driver.queryJobInfo(linkisData.getUser(), linkisData.getTaskID());
-                logger.info("Jobinfo from Linkis: \n{}", Utils.GSON.toJson(jobInfoResult));
+                logger.info("Jobinfo from Linkis: \n{}", Utils.toJson(jobInfoResult));
                 linkisData = updateExecDataByDwsResult(linkisData, jobInfoResult);
             } catch (Exception e) {
                 logger.warn("", e);
@@ -217,7 +217,7 @@ public class LinkisSubmitExecutor implements AsyncBackendExecutor, LogRetrievabl
                     "EXE0028",
                     ErrorLevel.ERROR,
                     CommonErrMsg.ExecutionInitErr,
-                    "LinkisSubmitExecutor is not inited." + Utils.GSON.toJson(this));
+                    "LinkisSubmitExecutor is not inited." + Utils.toJson(this));
         }
         driver.checkInit();
     }

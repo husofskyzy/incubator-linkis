@@ -31,6 +31,6 @@ public class DefaultStdOutPresenter implements Presenter {
 
     @Override
     public void present(PresenterModel model) {
-        driver.doOutput(CommonUtils.GSON.toJson(model));
+        driver.doOutput(CommonUtils.toJson(model));
     }
 }

@@ -149,7 +149,7 @@ public class LinkisClientApplication {
         parsedTplValidator.doValidation(result.getParsedTemplateCopy());
 
         Params params = result.getParams();
-        logger.debug("==========params============\n" + Utils.GSON.toJson(params));
+        logger.debug("==========params============\n" + Utils.toJson(params));
 
         /*
          VarAccess for sys_prop, sys_env
@@ -159,7 +159,7 @@ public class LinkisClientApplication {
                 new SysVarAccess()
                         .setSysProp(propertiesMap.get(CommonConstants.SYSTEM_PROPERTIES_IDENTIFIER))
                         .setSysEnv(propertiesMap.get(CommonConstants.SYSTEM_ENV_IDENTIFIER));
-        logger.debug("==========sys_var============\n" + Utils.GSON.toJson(sysVarAccess));
+        logger.debug("==========sys_var============\n" + Utils.toJson(sysVarAccess));
 
         LogUtils.getInformationLogger()
                 .info(
@@ -247,7 +247,7 @@ public class LinkisClientApplication {
                         .setUserConf(propertiesMap.get(LinkisClientKeys.LINKIS_CLIENT_USER_CONFIG))
                         .setDefaultConf(propertiesMap.get(defaultConfFileName))
                         .init();
-        logger.info("==========std_var============\n" + Utils.GSON.toJson(stdVarAccess));
+        logger.info("==========std_var============\n" + Utils.toJson(stdVarAccess));
 
         return new ProcessedData(null, params.getCmdType(), stdVarAccess, sysVarAccess);
     }
@@ -282,7 +282,7 @@ public class LinkisClientApplication {
                             .setSysVarAccess(data.getSysVarAccess())
                             .build();
 
-            logger.info("==========job============\n" + Utils.GSON.toJson(job));
+            logger.info("==========job============\n" + Utils.toJson(job));
 
             Validator jobValidator = new LinkisJobValidator();
             jobValidator.doValidation(job);

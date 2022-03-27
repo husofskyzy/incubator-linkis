@@ -88,8 +88,8 @@ public class SingleCmdParserTest {
 
         ParseResult result = parser.parse(cmdStr);
         System.out.println(result.getParams().getCmdType());
-        System.out.println(CommonUtils.GSON.toJson(result.getParams()));
-        System.out.println(CommonUtils.GSON.toJson(result.getRemains()));
+        System.out.println(CommonUtils.toJson(result.getParams()));
+        System.out.println(CommonUtils.toJson(result.getRemains()));
     }
 
     /** Method: parsePrimary(String[] input) */

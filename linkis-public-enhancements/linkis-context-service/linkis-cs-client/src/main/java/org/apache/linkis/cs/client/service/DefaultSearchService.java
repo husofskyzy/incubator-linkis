@@ -18,6 +18,7 @@
 package org.apache.linkis.cs.client.service;
 
 import org.apache.linkis.common.exception.ErrorException;
+import org.apache.linkis.common.utils.JacksonUtils;
 import org.apache.linkis.cs.client.ContextClient;
 import org.apache.linkis.cs.client.builder.ContextClientFactory;
 import org.apache.linkis.cs.common.entity.enumeration.ContextType;
@@ -31,7 +32,6 @@ import org.apache.linkis.cs.common.exception.ErrorCode;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import com.google.gson.Gson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,7 +42,6 @@ import java.util.Map;
 
 public class DefaultSearchService implements SearchService {
     private static final Logger logger = LoggerFactory.getLogger(DefaultSearchService.class);
-    private static final Gson gson = new Gson();
     private static SearchService searchService = null;
 
     private DefaultSearchService() {}
@@ -118,7 +117,7 @@ public class DefaultSearchService implements SearchService {
             throw new CSErrorException(
                     ErrorCode.SEARCH_CONTEXT_VALUE_ERROR,
                     "Search value : "
-                            + gson.toJson(
+                            + JacksonUtils.toJson(
                                     contextKeyValues.get(0)
                                             + " is not instance of class : "
                                             + contextValueType.getName()));
