@@ -17,6 +17,7 @@
 
 package org.apache.linkis.cs.highavailable.test;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.linkis.DataWorkCloudApplication;
 import org.apache.linkis.common.ServiceInstance;
 import org.apache.linkis.common.conf.BDPConfiguration;
@@ -30,9 +31,10 @@ import org.apache.linkis.cs.highavailable.test.haid.TestHAID;
 import org.apache.linkis.cs.highavailable.test.persist.TestPersistence;
 import org.apache.linkis.server.BDPJettyServerHelper;
 import org.apache.linkis.server.conf.ServerConfiguration;
-
-import org.apache.commons.lang3.StringUtils;
-
+import org.eclipse.jetty.server.Handler;
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.FilterHolder;
+import org.eclipse.jetty.webapp.WebAppContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -54,13 +56,6 @@ import org.springframework.core.env.StandardEnvironment;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
 import javax.servlet.DispatcherType;
-
-import com.google.gson.Gson;
-import org.eclipse.jetty.server.Handler;
-import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.servlet.FilterHolder;
-import org.eclipse.jetty.webapp.WebAppContext;
-
 import java.util.EnumSet;
 
 @SpringBootApplication
@@ -70,7 +65,6 @@ public class TestContextHAManager extends SpringBootServletInitializer {
 
     private static ConfigurableApplicationContext applicationContext;
     private static ServiceInstance serviceInstance;
-    private static final Gson gson = new Gson();
 
     public static void main(String[] args) throws ReflectiveOperationException {
 
