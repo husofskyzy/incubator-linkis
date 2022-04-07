@@ -5,6 +5,25 @@ Linkis
 
 [English](README.md) | [中文](README_CN.md)
 
+<p align="center" >
+    <a href="https://shenyu.apache.org/"><img src="https://shenyu.apache.org/img/logo/apache-shenyu.png" width="45%"></a>
+</p>
+<p align="center">
+  <strong>Scalable, High Performance, Responsive API Gateway Solution for all MicroServices</strong>
+</p>
+<p align="center">
+  <a href="https://shenyu.apache.org/">https://shenyu.apache.org/</a>
+</p>
+
+<p align="center">
+  <a href="https://shenyu.apache.org/docs/index" >
+    <img src="https://img.shields.io/badge/document-English-blue.svg" alt="EN docs" />
+  </a>
+  <a href="https://shenyu.apache.org/zh/docs/index">
+    <img src="https://img.shields.io/badge/文档-简体中文-blue.svg" alt="简体中文文档" />
+  </a>
+</p>
+
 # 介绍
 
 Linkis 在上层应用程序和底层引擎之间构建了一层计算中间件。通过使用Linkis 提供的REST/WebSocket/JDBC 等标准接口，上层应用可以方便地连接访问MySQL/Spark/Hive/Presto/Flink 等底层引擎，同时实现变量、脚本、函数和资源文件等用户资源的跨上层应用互通。  
