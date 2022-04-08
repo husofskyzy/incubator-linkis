@@ -227,6 +227,7 @@ public class ConfigurationRestfulApi {
         if (creator != null && (creator.equals("通用设置") || creator.equals("全局设置"))) {
             creator = "*";
         }
+        System.out.println("hello world");
         String username = SecurityFilter.getLoginUsername(req);
         ArrayList<ConfigValue> createList = new ArrayList<>();
         ArrayList<ConfigValue> updateList = new ArrayList<>();
